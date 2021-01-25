@@ -1,12 +1,23 @@
 import * as React from 'react'
+import { graphql } from 'gatsby'
 
-const IndexPage = () => (
+const HomePage = (data: any) => (
   <div>
-    <h1>Index</h1>
-    <p>
-      This is the homepage
-    </p>
+    <h1>Home</h1>
+    <p>This is the homepage [{data.site.siteMetadata.title}]</p>
   </div>
 )
 
-export default IndexPage
+export const query = graphql`
+  query HomePageQuery {
+    site {
+      siteMetadata {
+        title
+        description
+        siteUrl
+      }
+    }
+  }
+`
+
+export default HomePage
