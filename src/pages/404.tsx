@@ -1,12 +1,9 @@
-import * as React from 'react'
-import { Link } from 'gatsby'
+import React from 'react'
 
-const NotFoundPage = () => (
+const NotFoundPage = (props: any) => (
   <div>
-    <h1>404: Page not found.</h1>
-    <p>
-      You've hit the void. <Link to="/">Go back.</Link>
-    </p>
+    <h1>404</h1>
+    <p>This is the NotFound page</p>
   </div>
 )
 
