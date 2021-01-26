@@ -3,3 +3,7 @@
 - Test with theme in css variables
 - Save theme in local storage
 - Set theme from local storage to prevent theme flash
+
+## Demo
+
+[https://labs-thema-switch.netlify.app](https://labs-thema-switch.netlify.app)
