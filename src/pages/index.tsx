@@ -4,7 +4,7 @@ import { jsx } from '@emotion/react'
 
 const css = {
   '--bg': '#eee',
-  backgroundColor: 'var(--bg)',
+  backgroundColor: 'var(--background)',
   padding: '10px',
 }
 
