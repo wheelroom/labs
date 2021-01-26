@@ -4,30 +4,35 @@ import { jsx } from '@emotion/react'
 import { UserContext } from '../lib/root-element-wrapper'
 import { useContext } from 'react'
 
+// A simple page that sets some colors from the root css variables (the theme)
 const HomePage = (props: any) => {
-  const css = {
-    backgroundColor: 'var(--some-box-background-color)',
-    color: 'var(--some-box-text-color)',
-    padding: '10px',
-  }
+  // Get themeIds and method to change theme from Context
   const { themeIds, setThemeId } = useContext(UserContext)
-  const handleClick = (themeId: any) => {
-    console.log('clicked', themeId)
-    setThemeId(themeId)
-  }
 
   return (
-    <div css={css}>
+    <div
+      css={{
+        backgroundColor: 'var(--some-box-background-color)',
+        color: 'var(--some-box-text-color)',
+        padding: '10px',
+      }}
+    >
       <h1>Home</h1>
       <p>This is the homepage</p>
       <p>{props.data.site.siteMetadata.title}</p>
       <div css={{ display: 'flex' }}>
         {themeIds.map((themeId: any) => (
           <a
-            css={{ color: 'var(--some-box-text-color)', padding: '5px' }}
+            css={{
+              color: 'var(--some-box-link-text-color)',
+              backgroundColor: 'var(--some-box-link-background-color)',
+              margin: '5px',
+              padding: '10px',
+              borderRadius: '5px',
+            }}
             key={themeId}
             href="#"
-            onClick={() => handleClick(themeId)}
+            onClick={() => setThemeId(themeId)}
           >
             Switch to theme {themeId}
           </a>

@@ -10,14 +10,17 @@ export const RootElementWrapper = (props: any) => {
     someFlag: true,
   })
   const themeIds = Object.keys(theme)
-  const [themeId, setThemeId] = useState(themeIds[0])
-
+  const [themeId, setThemeId] = useState(localStorage.theme || themeIds[0])
   useEffect(() => {
-    console.log('themeId', themeId)
-  }, [setThemeId])
+    localStorage.theme = themeId
+  }, [themeId])
 
+  if (!localStorage.theme) {
+    localStorage.theme = themeIds[0]
+  }
   const value = { themeId, themeIds, setThemeId, flags }
 
+  // Set root css variables from theme
   const globalCss = {
     ':root': cssObjToVars({ obj: theme[themeId] }),
   }
