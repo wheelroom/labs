@@ -1,19 +1,7 @@
-import React, { Provider } from 'react'
-import { theme } from './theme.js'
-import { Global } from '@emotion/react'
+// import React, { Provider, useEffect, useState } from 'react'
+import React from 'react'
+import { RootElementWrapper } from './src/lib/root-element-wrapper.tsx'
 
-const UserContext = React.createContext({})
-
-const value = { theme }
-const globalCss = {
-  ':root': {
-    '--test-background': 'yellow',
-  },
+export const wrapRootElement = ({ element }) => {
+  return <RootElementWrapper>{element}</RootElementWrapper>
 }
-
-export const wrapRootElement = ({ element }) => (
-  <>
-    <Global styles={globalCss} />
-    <UserContext.Provider value={value}>{element}</UserContext.Provider>
-  </>
-)
