@@ -7,7 +7,7 @@ const UserContext = React.createContext({})
 const value = { theme }
 const globalCss = {
   ':root': {
-    background: 'yellow',
+    '--test-background': 'yellow',
   },
 }
 
