@@ -20,24 +20,25 @@ const HomePage = (props: any) => {
       <h1>Home</h1>
       <p>This is the homepage</p>
       <p>{props.data.site.siteMetadata.title}</p>
-      <div css={{ display: 'flex' }}>
-        {themeIds && themeIds.map((themeId: any) => (
-          <a
-            css={{
-              color: 'var(--some-box-link-text-color)',
-              backgroundColor: 'var(--some-box-link-background-color)',
-              margin: '5px',
-              padding: '10px',
-              borderRadius: '5px',
-            }}
-            key={themeId}
-            href="#"
-            onClick={() => setThemeId(themeId)}
-          >
-            Switch to theme {themeId}
-          </a>
-        ))}
-      </div>
+      <ul css={{ padding: 0 }}>
+        {themeIds &&
+          themeIds.map((themeId: any) => (
+            <li
+              css={{
+                backgroundColor: 'var(--some-box-link-background-color)',
+                borderRadius: '5px',
+                color: 'var(--some-box-link-text-color)',
+                cursor: 'pointer',
+                margin: '5px',
+                padding: '10px',
+              }}
+              key={themeId}
+              onClick={() => setThemeId(themeId)}
+            >
+              Switch to theme {themeId}
+            </li>
+          ))}
+      </ul>
     </div>
   )
 }
