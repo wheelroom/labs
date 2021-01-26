@@ -21,7 +21,7 @@ const HomePage = (props: any) => {
       <p>This is the homepage</p>
       <p>{props.data.site.siteMetadata.title}</p>
       <div css={{ display: 'flex' }}>
-        {themeIds.map((themeId: any) => (
+        {themeIds && themeIds.map((themeId: any) => (
           <a
             css={{
               color: 'var(--some-box-link-text-color)',
