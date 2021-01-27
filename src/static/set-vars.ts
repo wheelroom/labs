@@ -1,2 +1,2 @@
-import { setCssVars } from '../lib/set-css-vars'
+import { setCssVars } from '../lib/theme-provider/set-css-vars'
 setCssVars()

@@ -6,7 +6,4 @@ module.exports = {
     description: 'Labs thema switch',
     siteUrl: 'https://localhost:8000',
   },
-  plugins: [
-    // 'gatsby-plugin-emotion',
-  ],
 }

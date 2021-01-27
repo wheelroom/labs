@@ -14,7 +14,7 @@ export const cssObjToVars = ({ obj, cssVars, prefix }: any) => {
     if (typeof value === 'object') {
       cssObjToVars({ obj: value, cssVars, prefix: `${camelToDash(name)}` })
     } else {
-      cssVars[`--${prefix}-${camelToDash(name)}`] = value
+      cssVars[`--${prefix}${prefix && '-'}${camelToDash(name)}`] = value
     }
   })
   return cssVars

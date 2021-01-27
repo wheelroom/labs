@@ -1,26 +1,24 @@
-import { theme } from '../lib/theme'
-import { cssObjToVars } from '../lib/css-obj-to-vars'
+import { schemas, SchemaId } from './activeTheme'
+import { cssObjToVars } from './css-obj-to-vars'
 
 // Get theme from local storage, from system from default
-export const getThemeId = () => {
+export const getSchemaId = () => {
   const preferDarkMode =
     window &&
     window.matchMedia &&
     window.matchMedia('(prefers-color-scheme: dark)').matches
 
   const localStorageTheme = localStorage && localStorage.theme
-  const themeIds = Object.keys(theme)
-  // Assuming that themeIds[0] is light and themeIds[2] is dark
-  const themeId = localStorageTheme || (preferDarkMode && themeIds[2]) || themeIds[0]
+  const schemaId: SchemaId = localStorageTheme || (preferDarkMode && 'dark') || 'light'
   if (localStorage && !localStorageTheme) {
-    localStorage.theme = themeId
+    localStorage.theme = schemaId
   }
-  return themeId
+  return schemaId
 }
 
 export const setCssVars = () => {
-  const themeId = getThemeId()
-  const cssVars = cssObjToVars({ obj: theme[themeId] })
+  const schemaId = getSchemaId()
+  const cssVars = cssObjToVars({ obj: schemas[schemaId] })
   Object.entries(cssVars).forEach(([key, value]: any) =>
     document.documentElement.style.setProperty(key, value)
   )
