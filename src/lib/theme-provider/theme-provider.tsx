@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { setCssVars, getSchemaId } from './set-css-vars'
-import { names } from './activeTheme'
 
 export const ThemeContext = React.createContext({} as any)
 
@@ -12,7 +11,7 @@ export const ThemeProvider = (props: any) => {
     setCssVars()
   }, [themeSchemaId])
 
-  const value = { themeSchemaId, themeNames: names, setSchemaId }
+  const value = { themeSchemaId, setSchemaId }
 
   return (
     <ThemeContext.Provider value={value}>

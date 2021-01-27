@@ -3,7 +3,7 @@ import { light } from './themes/glacier/light'
 
 export type SchemaId = 'dark' | 'light'
 
-export const names = {
+export const themeNames = {
   theme: 'Glacier',
   schemas: { dark: 'Spooky', light: 'Sunny' },
 }

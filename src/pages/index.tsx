@@ -3,11 +3,12 @@ import { graphql } from 'gatsby'
 import { jsx } from '@emotion/react'
 import { ThemeContext } from '../lib/theme-provider/theme-provider'
 import { useContext } from 'react'
+import { themeNames } from '../lib/theme-provider/activeTheme'
 
 // A simple page that sets some colors from the root css variables (the theme)
 const HomePage = (props: any) => {
   // Get schemaIds and method to change theme from Context
-  const { themeNames, setSchemaId } = useContext(ThemeContext)
+  const { setSchemaId } = useContext(ThemeContext)
 
   return (
     <div
