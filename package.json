@@ -9,13 +9,13 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
+    "build-static": "webpack --config src/static/webpack.config.js",
     "clean": "gatsby clean",
-    "compile": "webpack --config src/static/webpack.config.js",
     "deploy": "gatsby build",
     "dev": "gatsby develop",
     "format": "prettier --write \"src/**/*.{ts,tsx,md}\"",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
-    "netlify": "npm run build",
+    "netlify": "npm run build-static && npm run build",
     "serve": "gatsby serve"
   },
   "engines": {
