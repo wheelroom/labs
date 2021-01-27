@@ -22,7 +22,7 @@ export const RootElementWrapper = (props: any) => {
 
   // Set root css variables from theme
   const globalCss = {
-    ':root': cssObjToVars({ obj: theme[themeId] }),
+    'body': cssObjToVars({ obj: theme[themeId] }),
   }
 
   return (
