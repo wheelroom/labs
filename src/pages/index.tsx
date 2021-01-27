@@ -20,7 +20,7 @@ const HomePage = (props: any) => {
       <h1>Home</h1>
       <p>This is the homepage</p>
       <p>{props.data.site.siteMetadata.title}</p>
-      <ul css={{ padding: 0 }}>
+      <ul css={{ padding: 0, listStyleType: 'none' }}>
         {themeIds &&
           themeIds.map((themeId: any) => (
             <li
