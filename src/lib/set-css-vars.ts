@@ -3,10 +3,16 @@ import { cssObjToVars } from '../lib/css-obj-to-vars'
 
 // Get theme from local storage, from system from default
 export const getThemeId = () => {
+  const preferDarkMode =
+    window &&
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+
   const localStorageTheme = localStorage && localStorage.theme
   const themeIds = Object.keys(theme)
-  const themeId = localStorageTheme || themeIds[0]
-  if (!localStorageTheme && localStorage) {
+  // Assuming that themeIds[0] is light and themeIds[2] is dark
+  const themeId = localStorageTheme || (preferDarkMode && themeIds[2]) || themeIds[0]
+  if (localStorage && !localStorageTheme) {
     localStorage.theme = themeId
   }
   return themeId
