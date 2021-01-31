@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { graphql } from 'gatsby'
 import { jsx } from '@emotion/react'
-import { ThemeContext } from '../lib/theme-provider/theme-provider'
+import { ThemeContext } from '../theme-provider/theme-provider'
 import { useContext } from 'react'
-import { themeNames } from '../lib/theme-provider/activeTheme'
+import { themeNames } from '../theme-provider/themes/activeTheme'
 
 // A simple page that sets some colors from the root css variables (the theme)
 const HomePage = (props: any) => {

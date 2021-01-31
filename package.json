@@ -9,7 +9,7 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "build-static": "webpack --config src/static/webpack.config.js",
+    "build-static": "webpack --config src/theme-provider/static/webpack.config.js",
     "clean": "gatsby clean",
     "deploy": "gatsby build",
     "dev": "gatsby develop",

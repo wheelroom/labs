@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { setCssVars, getSchemaId } from './set-css-vars'
+import { getSchemaId } from './lib/get-schema-id'
+import { setCssVars } from './lib/set-css-vars'
 
 export const ThemeContext = React.createContext({} as any)
 

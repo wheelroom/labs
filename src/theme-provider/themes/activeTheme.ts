@@ -1,5 +1,5 @@
-import { dark } from './themes/glacier/dark'
-import { light } from './themes/glacier/light'
+import { dark } from './glacier/dark'
+import { light } from './glacier/light'
 
 export type SchemaId = 'dark' | 'light'
 
